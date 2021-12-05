@@ -1,0 +1,92 @@
+@import './variables';
+@import './mixins';
+
+div.question {
+
+    background: $otherShadeOfWhiteColor;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+
+    & + div.question { margin-top: 8px; }
+
+    &.answered { background: $nullGrayColor; }
+
+    &.highlighted {
+
+        background: $lightWhiteColor;
+        border: 1px solid $purpleColor;
+
+        footer.user-info span { color: $textColor; }
+
+    }
+
+    p { color: $textColor; }
+
+    footer {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 24px;
+
+        div.user-info {
+
+            display: flex;
+            align-items: center;
+
+            img {
+                        
+                border-radius: 50%;
+                height: 32px;
+                width: 32px;
+                        
+            }
+                    
+            span {
+
+                 margin-left: 8px;
+                color: $darkGrayColor;
+                font-size: 14px;
+
+            }
+
+        }
+
+        > div {
+
+            display: flex;
+            gap: 16px;
+
+        }
+
+        button {
+
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            transition: filter 0.2;
+
+            &.like-button {
+
+                display: flex;
+                align-items: flex-end;
+                color: $darkGrayColor;
+                gap: 8px;
+
+                &.liked {
+
+                    color: $purpleColor;
+                    svg path { stroke: $purpleColor; }
+
+                }
+
+            }
+
+            &:hover { filter: brightness(0.7); }
+
+        }
+
+    }
+
+}

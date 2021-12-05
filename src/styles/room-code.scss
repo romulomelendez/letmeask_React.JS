@@ -1,0 +1,38 @@
+@import './variables';
+@import './mixins';
+
+button.room-code {
+
+    display: flex;
+    height: 40px;
+    width: 310px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: $whiteColor;
+    border: 1px solid $purpleColor;
+    cursor: pointer;
+    
+    div {
+
+        @include centralize;
+        background: $purpleColor;
+        height: 100%;
+        padding: 0 12px;
+
+        //> img { max-width: 0px; }
+
+    }
+
+    span {
+
+        flex: 1;
+        display: block;
+        align-self: center;
+        padding: 0 16px 0 12px;
+        width: 230px;
+        font-size: 14px;
+        font-weight: 500;
+
+    }
+
+}

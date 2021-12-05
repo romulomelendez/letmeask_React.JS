@@ -1,0 +1,150 @@
+@import './variables';
+@import './mixins';
+
+//  STYLES
+div#page-auth {
+
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+
+    aside {
+
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px 88px;
+        background-color: $purpleColor;
+        color: $whiteColor;
+
+        img { max-width: 320px; }
+
+        strong {
+            
+            font: 700 36px $poppins;
+            line-height: 42px;
+            margin-top: 16px;
+        
+        }
+
+        p {
+
+            font-size: 24px;
+            line-height: 32px;
+            margin-top: 16px;
+            color: $almostGrayColor;
+
+        }
+
+    }
+
+    main {
+
+        flex: 8;
+        padding: 0 32px;
+        @include centralize;
+        
+
+        div.main-content {
+
+            @include centralize;
+            flex-direction: column;
+            align-items: stretch;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+
+            > img { align-self: center; }
+
+            h2 {
+
+                @include setPoppins;
+                font-size: 24px;
+                margin: 64px 0 24px;
+
+            }
+
+            button.create-room {
+
+                @include centralize;
+                margin-top: 64px;
+                height: 50px;
+                border-radius: 8px;
+                font-weight: 500;
+                background: $redColor;
+                color: $whiteColor;
+                cursor: pointer;
+                border: 0;
+                transition: filter 0.2s;
+                
+                &:hover { filter: brightness(0.9); }
+
+                img { margin-right: 8px; }
+
+            }
+
+            div.separator {
+
+                display: flex;
+                align-items: center;
+                margin: 32px 0;
+                font-size: 14px;
+                color: $grayColor;
+
+                &::before {
+
+                    content: '';
+                    flex: 1;
+                    height: 1px;
+                    background: $grayColor;
+                    margin-right: 16px;
+
+                }
+
+                &::after {
+
+                    content: '';
+                    flex: 1;
+                    height: 1px;
+                    background: $grayColor;
+                    margin-left: 16px;
+                    
+                }
+
+            }
+
+            form {
+    
+                input{
+
+                    height: 50px;
+                    border-radius: 8px;
+                    border: 1px solid $grayColor;
+                    padding: 0 16px;
+                    background: $whiteColor;
+                    outline: none;
+
+                }
+
+                button { margin-top: 16px; }
+
+                button, input { width: 100%; }
+    
+            }
+
+            p {
+
+                font-size: 14px;
+                color: $darkGrayColor;
+                margin-top: 16px;
+
+                a { color: $pinkColor; }
+
+            }
+
+        }
+
+    }
+
+}
